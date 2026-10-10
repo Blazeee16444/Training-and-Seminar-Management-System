@@ -1,0 +1,49 @@
+{
+  "trainings": [
+    {
+      "id": 1,
+      "title": "Basic Computer Training",
+      "date": "2026-10-15",
+      "time": "09:00",
+      "venue": "Barangay Hall",
+      "speaker": "Juan Dela Cruz"
+    },
+    {
+      "id": 2,
+      "title": "First Aid and Emergency Response Seminar",
+      "date": "2026-10-20",
+      "time": "13:00",
+      "venue": "Barangay Covered Court",
+      "speaker": "Maria Santos"
+    }
+  ],
+  "participants": [
+    {
+      "id": 1,
+      "name": "Mark Reyes",
+      "contact": "09123456789",
+      "address": "San Nicolas"
+    },
+    {
+      "id": 2,
+      "name": "Angela Cruz",
+      "contact": "09987654321",
+      "address": "San Nicolas"
+    }
+  ],
+  "speakers": [
+    {
+      "id": 1,
+      "name": "Juan Dela Cruz",
+      "topic": "Computer Literacy",
+      "contact": "09111111111"
+    },
+    {
+      "id": 2,
+      "name": "Maria Santos",
+      "topic": "First Aid",
+      "contact": "09222222222"
+    }
+  ],
+  "attendance": []
+}

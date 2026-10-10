@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training and Seminar Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Training and Seminar Management System</h1>
+    <p>Barangay San Nicolas</p>
+</header>
+
+<nav>
+    <button onclick="showPage('dashboard')">Dashboard</button>
+    <button onclick="showPage('trainings')">Training & Seminars</button>
+    <button onclick="showPage('participants')">Participants</button>
+    <button onclick="showPage('attendance')">Attendance / Sign In</button>
+    <button onclick="showPage('reports')">Attendance Report</button>
+    <button onclick="showPage('speakers')">Speakers</button>
+</nav>
+
+<main>
+<section id="dashboard" class="page">
+    <h2>Dashboard</h2>
+    <div class="cards">
+        <div class="card"><h3>Total Trainings</h3><p id="totalTrainings">0</p></div>
+        <div class="card"><h3>Total Participants</h3><p id="totalParticipants">0</p></div>
+        <div class="card"><h3>Total Speakers</h3><p id="totalSpeakers">0</p></div>
+        <div class="card"><h3>Total Sign-Ins</h3><p id="totalAttendance">0</p></div>
+    </div>
+    <h2>Upcoming Training & Seminars</h2>
+    <table>
+        <thead><tr><th>Title</th><th>Date</th><th>Time</th><th>Venue</th></tr></thead>
+        <tbody id="upcomingTable"></tbody>
+    </table>
+</section>
+
+<section id="trainings" class="page hidden">
+    <h2>Training and Seminar Records</h2>
+    <form id="trainingForm">
+        <input type="text" id="trainingTitle" placeholder="Training/Seminar Title" required>
+        <input type="date" id="trainingDate" required>
+        <input type="time" id="trainingTime" required>
+        <input type="text" id="trainingVenue" placeholder="Venue" required>
+        <input type="text" id="trainingSpeaker" placeholder="Speaker" required>
+        <button type="submit">Add Training</button>
+    </form>
+    <table>
+        <thead><tr><th>Title</th><th>Date</th><th>Time</th><th>Venue</th><th>Speaker</th><th>Action</th></tr></thead>
+        <tbody id="trainingTable"></tbody>
+    </table>
+</section>
+
+<section id="participants" class="page hidden">
+    <h2>Participants</h2>
+    <form id="participantForm">
+        <input type="text" id="participantName" placeholder="Full Name" required>
+        <input type="text" id="participantContact" placeholder="Contact Number" required>
+        <input type="text" id="participantAddress" placeholder="Address" required>
+        <button type="submit">Add Participant</button>
+    </form>
+    <table>
+        <thead><tr><th>Name</th><th>Contact</th><th>Address</th><th>Action</th></tr></thead>
+        <tbody id="participantTable"></tbody>
+    </table>
+</section>
+
+<section id="attendance" class="page hidden">
+    <h2>Attendance / Sign In</h2>
+    <div class="attendance-box">
+        <label>Select Training / Seminar</label>
+        <select id="attendanceTraining"><option value="">-- Select Training --</option></select>
+        <label>Select Participant</label>
+        <select id="attendanceParticipant"><option value="">-- Select Participant --</option></select>
+        <button class="sign-in-btn" onclick="signInParticipant()">✓ SIGN IN</button>
+    </div>
+    <div class="time-box">
+        <p>Current Date</p><h3 id="currentDate">--</h3>
+        <p>Current Time</p><h3 id="currentTime">--</h3>
+    </div>
+    <h2>Sign-Ins</h2>
+    <table>
+        <thead><tr><th>Participant</th><th>Training/Seminar</th><th>Date</th><th>Time In</th><th>Status</th></tr></thead>
+        <tbody id="attendanceTable"></tbody>
+    </table>
+</section>
+
+<section id="reports" class="page hidden">
+    <h2>Attendance Report</h2>
+    <div class="report-cards">
+        <div class="report-card"><h3>Total Sign-Ins</h3><p id="reportTotal">0</p></div>
+        <div class="report-card"><h3>Present</h3><p id="reportPresent">0</p></div>
+        <div class="report-card"><h3>Absent</h3><p id="reportAbsent">0</p></div>
+    </div>
+    <table>
+        <thead><tr><th>Participant</th><th>Training/Seminar</th><th>Date</th><th>Time In</th><th>Status</th></tr></thead>
+        <tbody id="reportTable"></tbody>
+    </table>
+</section>
+
+<section id="speakers" class="page hidden">
+    <h2>Speakers</h2>
+    <form id="speakerForm">
+        <input type="text" id="speakerName" placeholder="Speaker Name" required>
+        <input type="text" id="speakerTopic" placeholder="Specialization / Topic" required>
+        <input type="text" id="speakerContact" placeholder="Contact Number" required>
+        <button type="submit">Add Speaker</button>
+    </form>
+    <table>
+        <thead><tr><th>Name</th><th>Topic</th><th>Contact</th><th>Action</th></tr></thead>
+        <tbody id="speakerTable"></tbody>
+    </table>
+</section>
+</main>
+
+<footer><p>Training and Seminar Management System © 2026</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
